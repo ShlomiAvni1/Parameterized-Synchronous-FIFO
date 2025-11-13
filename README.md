@@ -46,6 +46,7 @@ Instead of relying on natural binary overflow (which only works for power-of-two
 // If pointer is at the last address (DEPTH-1), wrap to 0. Otherwise, increment.
 assign wptr_next = (wptr == DEPTH - 1) ? {ADDR_WIDTH{1'b0}} : wptr + 1'b1;
 assign rptr_next = (rptr == DEPTH - 1) ? {ADDR_WIDTH{1'b0}} : rptr + 1'b1;
+```
 This ensures that for a DEPTH=9, the pointers correctly wrap from address 8 back to 0, rather than continuing to 9.
 
 ### Empty and Full Conditions
@@ -108,3 +109,4 @@ The following diagram is a conceptual RTL (Register-Transfer Level) schematic of
 * **Simulation:** Cadence Xcelium (run on EDA Playground)
 * **Waveform Viewing:** GTKWave
 * **Diagrams:** Goodnotes
+
